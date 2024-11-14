@@ -1,0 +1,31 @@
+<div class="centered-card-container">
+  <div class="centered-card">
+    <h2 class="card-title">Inicio de Sesión Admin</h2>
+
+    <!-- Mensaje de error de inicio de sesión -->
+    <% if flash[:alert] %>
+      <div class="error-message">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+
+    <%= form_with model: @admin, url: administrador_sessions_path, local: true, scope: :admin do |f| %>
+      <!-- Campo Usuario -->
+      <div class="form-group">
+        <%= f.label :usuario, "Usuario" %>
+        <%= f.text_field :usuario, class: "input-field" %>
+      </div>
+
+      <!-- Campo Contraseña -->
+      <div class="form-group">
+        <%= f.label :password, "Contraseña" %>
+        <%= f.password_field :password, required: true, class: "input-field" %>
+      </div>
+
+      <!-- Botón para enviar el formulario -->
+      <div class="button-container">
+        <%= f.submit "Iniciar Sesión", class: "button" %>
+      </div>
+    <% end %>
+  </div>
+</div>

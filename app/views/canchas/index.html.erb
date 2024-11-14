@@ -1,0 +1,62 @@
+<div class="card-container">
+    <!-- Título principal centrado -->
+    <h1 class="title-centered">
+        Detalle de <%= @polideportivo.nombre %>
+    </h1>
+    <div class="centered-cardd-canchas">
+        <%
+=begin%>
+ <div class="add-button">
+            <!-- Botón para ir al inicio -->
+            <%= link_to("Agregar cancha", new_polideportivo_cancha_path(@polideportivo), class: "button button-primary") %>
+
+        </div> 
+<%
+=end%>
+
+        <!-- Sección adicional para la información de contacto y mapa -->
+        <div class="info-container-card">
+            <h2>Información de Contacto</h2>
+            <p><strong>Nombre:</strong> <%= @polideportivo.nombre %></p>
+            <p><strong>Contacto:</strong> <%= @polideportivo.contacto %></p>
+            <p><strong>Ubicación:</strong> <%= @polideportivo.ubicacion %></p>
+
+        </div>
+    </div>
+
+    <!-- Verificar si hay canchas disponibles -->
+    <% if @canchas.present? %>
+    <div>
+        <% @canchas.each do |cancha| %>
+        <div class="centered-cardd-poli card-container">
+            <h2 class="card-title"><%= cancha.nombre %></h2>
+
+            <!-- Imagen de la cancha -->
+            <% if cancha.imagen.attached? %>
+            <%= image_tag cancha.imagen, class: "card-image", alt: "Imagen de #{cancha.nombre}" %>
+            <% else %>
+            <div class="card-image-placeholder">
+                Imagen no disponible
+            </div>
+            <% end %>
+
+            <!-- Contenido de la tarjeta -->
+            <div class="card-content">
+                <p class="card-category"><%= cancha.descripcion %></p>
+                <p>Precio Día: S/ <%= cancha.precio_dia %></p>
+                <p>Precio Noche: S/ <%= cancha.precio_noche %></p>
+
+                <!-- Botones para reservar la cancha y ver reservas -->
+                <div class="button-container">
+                    <%= link_to "Reservar cancha", new_polideportivo_cancha_reserva_path(@polideportivo, cancha), class: "button button-secondary" %>
+                    <%= link_to "Ver reservas", polideportivo_cancha_reservas_path(@polideportivo, cancha), class: "button button-primary" %>
+                </div>
+            </div>
+        </div>
+        <% end %>
+    </div>
+
+    <% else %>
+    <p>No hay canchas disponibles para este polideportivo.</p>
+    <% end %>
+</div>

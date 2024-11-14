@@ -1,0 +1,46 @@
+<div class="centered-card-container">
+  <div class="centered-card">
+    <%= form_with(model: @polideportivo, local: true, html: { multipart: true }) do |form| %>
+      <h1 class="form-title">Nuevo Polideportivo</h1>
+
+      <div class="field">
+        <%= form.label :nombre, "Nombre del Polideportivo", class: 'form-label' %>
+        <%= form.text_field :nombre, required: true, placeholder: "Ingrese el nombre", class: 'form-input' %>
+      </div>
+
+      <div class="field">
+        <%= form.label :ubicacion, "Ubicación", class: 'form-label' %>
+        <%= form.text_field :ubicacion, required: true, placeholder: "Ingrese la ubicación", class: 'form-input' %>
+      </div>
+
+      <div class="field">
+        <%= form.label :categoria, "Categoría", class: 'form-label' %>
+        <%= form.text_field :categoria, required: true, placeholder: "Ingrese la categoría", class: 'form-input' %>
+      </div>
+
+      <div class="field">
+        <%= form.label :descripcion, "Descripción", class: 'form-label' %>
+        <%= form.text_area :descripcion, required: true, placeholder: "Ingrese una descripción", class: 'form-textarea' %>
+      </div>
+
+      <div class="field">
+        <%= form.label :contacto, "Contacto", class: 'form-label' %>
+        <%= form.text_field :contacto, required: true, placeholder: "Ingrese el número de contacto", class: 'form-input' %>
+      </div>
+
+      <div class="field">
+        <%= form.label :ubicacion_api, "Ubicación API", class: 'form-label' %>
+        <%= form.text_field :ubicacion_api, placeholder: "URL de la ubicación", class: 'form-input' %>
+      </div>
+
+      <div class="field">
+        <%= form.label :imagen, "Imagen", class: 'form-label' %>
+        <%= form.file_field :imagen, class: 'form-input-file' %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit "Crear Polideportivo", class: 'button button-primary' %>
+      </div>
+    <% end %>
+  </div>
+</div>

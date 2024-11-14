@@ -1,0 +1,51 @@
+<div class="centered-card-container">
+    <div class="centered-cardd">
+        <h2 class="card-title">Crear Nueva Cancha</h2>
+
+        <%= form_with(model: [@polideportivo, @cancha], local: true, html: { multipart: true }) do |form| %>
+        <div class="card-content">
+            <!-- Campo Nombre -->
+            <div class="form-group">
+                <%= form.label :nombre, "Nombre" %>
+                <%= form.text_field :nombre, required: true, class: 'input-field' %>
+            </div>
+
+            <!-- Campo Descripción -->
+            <div class="form-group">
+                <%= form.label :descripcion, "Descripción" %>
+                <%= form.text_area :descripcion, required: true, class: 'input-field' %>
+            </div>
+
+            <!-- Campo Precio Día -->
+            <div class="form-group">
+                <%= form.label :precio_dia, "Precio Día (S/)" %>
+                <%= form.number_field :precio_dia, step: 0.01, required: true, class: 'input-field' %>
+            </div>
+
+            <!-- Campo Precio Noche -->
+            <div class="form-group">
+                <%= form.label :precio_noche, "Precio Noche (S/)" %>
+                <%= form.number_field :precio_noche, step: 0.01, required: true, class: 'input-field' %>
+            </div>
+
+            <!-- Campo Tipo de Cancha -->
+            <div class="form-group">
+                <%= form.label :tipo, "Tipo de Cancha" %>
+                <%= form.select :tipo, Cancha.tipos.keys.map { |k| [k.humanize, k] }, prompt: "Seleccione el tipo de cancha", class: 'input-field' %>
+            </div>
+
+            <!-- Campo Imagen -->
+            <div class="form-group">
+                <%= form.label :imagen, "Imagen" %>
+                <%= form.file_field :imagen, class: 'input-field' %>
+            </div>
+
+            <!-- Botón para enviar -->
+            <div class="button-container">
+                <%= form.submit "Crear Cancha", class: 'button' %>
+            </div>
+        </div>
+        <% end %>
+    </div>
+
+</div>

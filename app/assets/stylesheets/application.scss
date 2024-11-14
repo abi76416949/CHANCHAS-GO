@@ -1,0 +1,36 @@
+// Importa los estilos de componentes
+@import 'variables';
+@import 'components/letra';
+@import 'components/boton';
+@import 'components/cards';
+@import 'components/tablas';
+@import 'components/encabezados';
+@import 'propietario';
+@import 'components/formulario';
+
+
+
+// Añade otros archivos SCSS si tienes más componentes
+
+.body {
+  
+  background:$background-gradient ;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+}
+
+
+.map-container iframe {
+  width: 100%;
+  height: 200px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+

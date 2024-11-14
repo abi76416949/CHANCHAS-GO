@@ -1,0 +1,19 @@
+# test/fixtures/polideportivos.yml
+
+polideportivo_1:
+  id: 1
+  nombre: "Polideportivo Central"
+  ubicacion: "Avenida Principal 123, Ciudad"
+  categoria: "Deportes múltiples"
+  descripcion: "Polideportivo equipado para una variedad de deportes y eventos."
+  contacto: "1234567890"
+  ubicacion_api: "api_location_1"
+
+polideportivo_2:
+  id: 2
+  nombre: "Polideportivo Norte"
+  ubicacion: "Calle Secundaria 45, Ciudad"
+  categoria: "Fútbol y Básquetbol"
+  descripcion: "Espacio especializado en canchas de fútbol y básquetbol."
+  contacto: "0987654321"
+  ubicacion_api: "api_location_2"

@@ -1,0 +1,48 @@
+<div class="centered-card-container">
+    <div class="centered-card">
+        <h2 class="card-title">Crear Nueva Reserva</h2>
+
+        <%= form_with model: [@polideportivo, @cancha, @reserva], local: true do |f| %>
+        <!-- Campo Nombre -->
+        <div class="field form-field">
+            <%= f.label :nombre, "Nombre", class: "form-label" %>
+            <%= f.text_field :nombre, required: true, class: "form-input" %>
+        </div>
+
+        <!-- Campo Teléfono -->
+        <div class="field form-field">
+            <%= f.label :telefono, "Teléfono", class: "form-label" %>
+            <%= f.text_field :telefono, class: "form-input" %>
+        </div>
+
+        <!-- Campo Email -->
+        <div class="field form-field">
+            <%= f.label :email, "Email", class: "form-label" %>
+            <%= f.email_field :email, class: "form-input" %>
+        </div>
+
+        <!-- Campo Fecha -->
+        <div class="field form-field">
+            <%= f.label :fecha, "Fecha", class: "form-label" %>
+            <%= f.date_field :fecha, required: true, class: "form-input" %>
+        </div>
+
+        <!-- Campo Hora inicio -->
+        <div class="field form-field">
+            <%= f.label :hora_inicio, "Hora inicio", class: "form-label" %>
+            <%= f.time_field :hora_inicio, required: true, class: "form-input" %>
+        </div>
+
+        <!-- Campo Hora fin -->
+        <div class="field form-field">
+            <%= f.label :hora_fin, "Hora fin", class: "form-label" %>
+            <%= f.time_field :hora_fin, required: true, class: "form-input" %>
+        </div>
+
+        <!-- Botón para enviar el formulario -->
+        <div class="actions">
+            <%= f.submit "Crear Reserva", class: "button" %>
+        </div>
+        <% end %>
+    </div>
+</div>

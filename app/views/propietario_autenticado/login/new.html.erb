@@ -1,0 +1,37 @@
+<div class="centered-card-container">
+    <div class="centered-card">
+        <h2 class="card-title">Ingreso de Propietarios</h2>
+
+        <%= form_with model: @propietario, url: auth_login_index_path, local: true, scope: :propietario do |f| %>
+        <!-- Mensaje de error de inicio de sesión -->
+        <% if flash[:alert] %>
+        <div class="error-message">
+            <%= flash[:alert] %>
+        </div>
+        <% end %>
+        <!-- Campo Email -->
+        <div class="form-group">
+            <%= f.label :email, "Email" %>
+            <%= f.email_field :email, class: "input-field" %>
+        </div>
+
+        <!-- Campo Contraseña -->
+        <div class="form-group">
+            <%= f.label :password, "Contraseña" %>
+            <%= f.password_field :password, required: true, class: "input-field" %>
+        </div>
+
+        <!-- Botón para enviar el formulario -->
+        <div class="button-container">
+            <%= f.submit "Iniciar Sesión", class: "button" %>
+        </div>
+        <% end %>
+
+        <!-- Enlace para el inicio de sesión de administrador -->
+
+        <!-- Enlace para admin -->
+        <div class="admin-login-link">
+            <%= link_to "¿Eres admin?", new_administrador_session_path, class: "admin-link" %>
+        </div>
+    </div>
+</div>

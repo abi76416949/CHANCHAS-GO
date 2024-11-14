@@ -1,0 +1,13 @@
+propietario_1:
+  email: "example@gmial"
+  password: "password123"
+  nombre: "Juan Pérez"
+  numero: "1234567890"
+  polideportivo_id: 1 # Referencia al polideportivo_1
+
+propietario_2:
+  email: "dlfajf@fj"
+  password: "securepassword"
+  nombre: "Ana Gómez"
+  numero: "0987654321"
+  polideportivo_id: 2 # Referencia al polideportivo_2

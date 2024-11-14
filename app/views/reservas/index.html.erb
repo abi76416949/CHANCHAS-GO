@@ -1,0 +1,39 @@
+<div class="centered-card-container">
+  <div class="centered-card">
+    <h1 class="center-title">Reservas para la Cancha: <%= @cancha.nombre %></h1>
+    <h2 class="center-title">Polideportivo: <%= @polideportivo.nombre %></h2>
+
+    <% if @reservas.any? %>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Teléfono</th>
+            <th>Email</th>
+            <th>Fecha</th>
+            <th>Hora Inicio</th>
+            <th>Hora Fin</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @reservas.each do |reserva| %>
+            <tr>
+              <td><%= reserva.nombre %></td>
+              <td><%= reserva.telefono %></td>
+              <td><%= reserva.email %></td>
+              <td><%= reserva.fecha.strftime("%d/%m/%Y") %></td>
+              <td><%= reserva.hora_inicio.strftime("%H:%M") %></td>
+              <td><%= reserva.hora_fin.strftime("%H:%M") %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      <p>No hay reservas para esta cancha.</p>
+    <% end %>
+
+    <div class="button-container">
+      <%= link_to "Volver a Canchas", polideportivo_canchas_path(@polideportivo), class: "button button-secondary" %>
+    </div>
+  </div>
+</div>

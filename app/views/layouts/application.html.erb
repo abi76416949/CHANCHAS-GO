@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CanchaGO</title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%
+=begin%>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <%
+=end%>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
+
+    <script src="https://kit.fontawesome.com/c1cf5b6134.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="body">
+
+
+    <div class="header">
+        <h1 class="header-title">CANCHAS<span class="highlight">G<i class="fa-solid fa-futbol"></i></span></h1>
+
+
+        <div class="nav">
+            <%= link_to polideportivos_path, class: "button button-encabezado nav-link" do %>
+            <i class="fa-solid fa-house"></i> HOME
+            <% end %>
+
+            <%= link_to 'Iniciar Sesión', new_auth_login_path, class: 'button button-encabezado nav-link' %>
+        </div>
+    </div>
+
+    <%= yield %>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 CANCHAS GO! Todos los derechos reservados.</p>
+            <div class="footer-nav">
+                <a href="#about" class="footer-link">Acerca de</a>
+                <a href="#contact" class="footer-link">Contacto</a>
+                <a href="#privacy" class="footer-link">Política de Privacidad</a>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

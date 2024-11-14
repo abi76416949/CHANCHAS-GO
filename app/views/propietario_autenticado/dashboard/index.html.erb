@@ -1,0 +1,34 @@
+<div class="dashboard-container">
+    <h1>Lista de Propietarios</h1>
+    <%= link_to 'Nuevo Propietario', formulario_propietario_path, class: 'new-propietario-btn' %>
+
+    <table class="propietarios-table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Polideportivo</th>
+                <th>Contacto</th>
+                <th>Email</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @propietarios.each do |propietario| %>
+            <tr>
+                <td><%= propietario.nombre %></td>
+                <td><%= propietario.polideportivo %></td>
+                <td><%= propietario.contacto %></td>
+                <td><%= propietario.email %></td>
+                <td>
+                    <%= link_to 'Ver Detalles', propietario_path(propietario), class: "btn btn-info" %>
+                    <%= link_to 'Editar', edit_propietario_path(propietario), class: "btn btn-primary" %>
+                    <%= link_to 'Eliminar', propietario_path(propietario), method: :delete, data: { confirm: "¿Estás seguro?" }, class: "btn btn-danger" %>
+                </td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+
+
+
+</div>

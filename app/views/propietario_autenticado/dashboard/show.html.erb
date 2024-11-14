@@ -1,0 +1,9 @@
+    <div class="centered-card">
+    <h2>Detalles del Propietario</h2>
+    <p><strong>Nombre:</strong> <%= @propietario.nombre %></p>
+    <p><strong>Número:</strong> <%= @propietario.numero %></p>
+    <p><strong>Email:</strong> <%= @propietario.email %></p>
+    <p><strong>Polideportivo:</strong> <%= @propietario.polideportivo.present? ? @propietario.polideportivo.nombre : "No asignado" %></p>
+    
+    <%= link_to "Volver", administrador_dashboard_path, class: "button" %>
+    </div>

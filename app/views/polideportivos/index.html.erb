@@ -1,0 +1,25 @@
+<div class="card-container">
+  <!-- Contenedor para los polideportivos -->
+  <div class="polideportivos-grid">
+    <% @polideportivos.each do |polideportivo| %>
+      <div class="centered-cardd-poli">
+        <!-- Imagen del polideportivo -->
+        <% if polideportivo.imagen.attached? %>
+          <%= image_tag polideportivo.imagen, class: "card-image", alt: "Imagen de #{polideportivo.nombre}" %>
+        <% else %>
+          <div class="card-image-placeholder">No hay imagen disponible</div>
+        <% end %>
+
+        <!-- Contenido de la tarjeta -->
+        <div class="card-content">
+          <h2 class="card-title"><%= polideportivo.nombre %></h2>
+
+          <!-- Botones para ver, editar y eliminar -->
+          <div class="button-container">
+            <%= link_to "Ver listado de canchas", polideportivo_canchas_path(polideportivo), class: "button button-primary" %>
+            </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

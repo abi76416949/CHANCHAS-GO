@@ -1,0 +1,15 @@
+cancha_1:
+  id: 1
+  polideportivo_id: 1 # Referencia al polideportivo_1
+  nombre: "Cancha Principal"
+  descripcion: "Cancha ideal para partidos de fútbol."
+  precio_dia: 50.0
+  precio_noche: 75.0
+
+cancha_2:
+  id: 2
+  polideportivo_id: 2 # Referencia al polideportivo_2
+  nombre: "Cancha Secundaria"
+  descripcion: "Cancha para eventos y prácticas deportivas."
+  precio_dia: 40.0
+  precio_noche: 60.0

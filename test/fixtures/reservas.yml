@@ -1,0 +1,19 @@
+# test/fixtures/reservas.yml
+
+reserva_1:
+  nombre: "Reserva de Juan Pérez"
+  telefono: "1234567890"
+  #email: "juan.perez@example.com"
+  cancha_id: 1 # Referencia a cancha_1
+  fecha: 2024-11-15
+  hora_inicio: "10:00"
+  hora_fin: "12:00"
+
+reserva_2:
+  nombre: "Reserva de Ana Gómez"
+  telefono: "0987654321"
+  #email: "ana.gomez@example.com"
+  cancha_id: 2 # Referencia a cancha_2
+  fecha: 2024-11-16
+  hora_inicio: "15:00"
+  hora_fin: "17:00"

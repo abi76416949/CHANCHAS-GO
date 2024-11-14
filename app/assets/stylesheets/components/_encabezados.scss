@@ -1,0 +1,91 @@
+@import '../variables';
+// Estilos para el encabezado
+.header {
+  background-color: $azul_cobriso; // Fondo del encabezado reemplazado
+  //color: rgba(255, 255, 255, 0.4); // Ajustado para mejor contraste
+  padding-right: 200px ; 
+  padding-left: 150px;
+  /* Ajustar el padding vertical a 10px para hacerlo más delgado */
+  height: 50px; /* Ajusta la altura del encabezado */
+  line-height: 50px; /* Alinear el texto verticalmente */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  margin: 10px;
+
+
+
+  .header-title {
+    font-size: 2em; // la palabra "canchas"
+    font-weight: bold;
+    color: $white; // Color del título reemplazado
+  }
+
+  .nav {
+    display: flex;
+    gap: 15px;
+  }
+
+  .nav-link {
+    color: #ffffff; // Color de los enlaces de navegación reemplazado
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 1em; // Aumenta el tamaño del texto
+    margin-right: 15px; // Espaciado entre enlaces (opcional)
+  }
+  
+  .highlight {
+    font-weight: bold;
+    color: #000; // Cambia el color de "GO!" a negro
+    font-size: 1.3em; // Aumenta el tamaño del texto
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); // Agrega un sombreado (opcional)
+  }
+  
+}
+
+// Estilos para el contenido principal
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; // Espacio entre el header y el contenido principal
+  width: 100%;
+}
+
+// Estilos para el pie de página
+.footer {
+  background-color: #031716; // Fondo del pie de página reemplazado
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  border-radius: 8px;
+  
+
+  .footer-nav {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .footer-link {
+    color: #6BA3BE; // Color de los enlaces del pie de página reemplazado
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #0C969C; // Color al pasar el cursor reemplazado
+    }
+  }
+}
+.container-header {
+  display: flex;
+  justify-content: space-between;
+  align-items:right;
+
+  margin-right: auto; /* Empuja el botón a la derecha */
+}

@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>Detalles del Polideportivo</h1>
+  <p><strong>Nombre:</strong> <%= @polideportivo.nombre %></p>
+  <p><strong>Ubicación:</strong> <%= @polideportivo.ubicacion %></p>
+  <p><strong>Categoría:</strong> <%= @polideportivo.categoria %></p>
+  <p><strong>Descripción:</strong> <%= @polideportivo.descripcion %></p>
+  <p><strong>Contacto:</strong> <%= @polideportivo.contacto %></p>
+
+  <% if @polideportivo.imagen.attached? %>
+    <h2>Imagen</h2>
+    <%= image_tag @polideportivo.imagen, class: "polideportivo-image" %>
+  <% else %>
+    <p>No hay imagen disponible</p>
+  <% end %>
+
+  <div class="button-container">
+  <%= link_to "Editar", edit_polideportivo_path(@polideportivo), class: "button button-secondary" %>
+
+  <!-- Usar un formulario para eliminar -->
+  <%= form_with(url: polideportivo_path(@polideportivo), method: :delete, local: true) do %>
+    <%= submit_tag "Eliminar", data: { confirm: "¿Estás seguro de que deseas eliminar este polideportivo?" }, class: "button button-danger" %>
+  <% end %>
+
+  <%= link_to "Volver a la lista", polideportivos_path, class: "button button-primary" %>
+  </div>
+
+</div>
